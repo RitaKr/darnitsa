@@ -7,7 +7,7 @@
 }
 body {
     background: rgba(61, 41, 85, 0.6) url(images/img.png) no-repeat center;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-blend-mode: color;
     backdrop-filter: blur(6px);
