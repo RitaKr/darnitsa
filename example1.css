@@ -24,7 +24,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: justify;
-    border-bottom: rgba(244, 165, 96, 0.3) double 11px;
+    border-bottom: rgba(244, 165, 96, 0.3) double 11px; 
     
 }
 h1 {
@@ -40,15 +40,75 @@ h1 {
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+    align-items: center;
     
 }
-#main-inf img {
-    width: 50%;
-    box-shadow: -15px 15px 2px rgba(0, 0, 0, 0.4), 15px -15px 2px rgb(128, 233, 247, .2), 2px -2px 5px rgba(0, 0, 0, 0.6), -3px 3px 5px rgba(0, 0, 0, 0.4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slider{
+    flex-basis:50%;
+    height: 300px;
+    text-align: center;
 }
+.slider li{
+   display: inline;
+}
+
+.slider img{
+    max-height:300px;
+    max-width:100%;
+    box-shadow: -15px 15px 2px rgba(0, 0, 0, 0.4), 15px -15px 2px rgb(128, 233, 247, .2), 2px -2px 5px rgba(0, 0, 0, 0.6), -3px 3px 5px rgba(0, 0, 0, 0.4);
+    animation-duration: 1000ms;
+    filter: opacity(100%);
+    transform: scale(0.001);
+    transition: 1000ms; 
+    transform: scale(1);
+
+}
+.control div{
+    border-radius: 50%;
+    width:20px;
+    height:20px;
+    background-color: rgba(255,255,255,.7);
+    margin: 10px;
+    display: inline-block;
+    opacity: 0.4;
+}
+#c1 {
+    opacity: 1;
+}
+.control{
+ margin:0;
+ padding:0;
+}
+
+.small{
+    transform: scale(0.01);
+}
+
+
+
+
+
+
 #main-inf p {
     padding: 40px;
-    
+    flex-basis:42%;
+
 }
 #main-inf p::first-letter {
     color: rgba(244, 165, 96);

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ua">
 <head>
-    <title></title>
+    <title>ПРАТ ФАРМАЦЕВТИЧНА ФІРМА «ДАРНИЦЯ»</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="example1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+   
 </head>
 <body>
     <div id="background">
         
-            <h1>ПРАТ "ФАРМАЦЕВТИЧНА ФІРМА «ДАРНИЦЯ»</h1>
+            <h1>ПРАТ ФАРМАЦЕВТИЧНА ФІРМА «ДАРНИЦЯ»</h1>
             <div id="container">
         <div id="main-inf">
         <p>Українська фармацевтична компанія, яка створена 1938 року. Станом на 2016-2017
@@ -26,9 +26,75 @@
              зацікавити юних винахідників збагнути складний процес створення ліків, в ігровій 
              формі відтворити ключові етапи виробничого циклу, де маленькі відвідувачі можуть 
              інтегруватися особисто.</p>
-        <img src="images/img.png">
+   <div class="slider">
+    <ul>
+        <img src="images/img1.png" id='slider_img'>   
+        <div class="control">
+            <div id="c1"></div>
+            <div id="c2"></div>
+        </div>
+    </ul>
+    </div>
+
         </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <script src='jquery-3.4.1.slim.js'></script>
+
+    <script>
+        
+     
+     
+      $(document).ready(function(){
+        let a=1;
+        let img_counter=2;
+        let counter=1;
+        let img =document.getElementById('slider_img');
+
+        setInterval(function(){
+            img.setAttribute('src', 'images/img'+counter+'.png');
+            $(`.control div`).css('opacity', '0.4')
+           $(`#c${counter}`).css('opacity', '1')
+
+                      counter++;
+if (counter> img_counter){
+    counter=1;
+}
+        },6000);
+
+ 
+$('#c1').click(function(){
+    img.setAttribute('src', 'images/img'+1+'.png');
+    $('#c1').css('opacity', '1');
+    $('#c2').css('opacity', '0.4');
+});
+$('#c2').click(function(){
+    img.setAttribute('src', 'images/img'+2+'.png');
+    $('#c2').css('opacity', '1');
+    $('#c1').css('opacity', '0.4');
+});
+$('.slider').hover(function(){
+    setInterval(function(){
+           let img =document.getElementById('slider_img');
+           $(`.control div`).css('opacity', '0.4')
+           $(`#c${counter}`).css('opacity', '1')
+            img.setAttribute('src', 'images/img'+counter+'.png');
+                      counter++;
+if (counter> img_counter){
+    counter=1;
+}
+        },1000000);
+});
+
+  
+        });
+    </script>
 </body>
 </html>

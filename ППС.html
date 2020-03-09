@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <title>Парк Партизанської Слави</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="example1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+   body {
+    background: rgba(61, 41, 85, 0.6) url(images/ППС1.jpg) no-repeat center;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    backdrop-filter: blur(6px);
+}
+   </style>
+</head>
+<body>
+    <div id="background">
+        
+    <h1>Парк Партизанської Слави</h1>
+    <div id="container">
+        <div id="main-inf">
+        <p>Регіональний ландшафтний парк у Дарницькому районі міста Києва. Знаходиться між 
+            вулицями Тростянецькою та Славгородською. У 1965 році для організації районного 
+            парку культури і відпочинку «Партизанська слава» до меж Дарницького району міста 
+            була включена частина Микільського лісового масиву. Парк створено у 1970 році. 
+            У 1994 році рішенням Київської міської ради йому надано статус природоохоронної 
+            території. Парк було створено на базі лісу з сосни звичайної. Загальна площа 
+            парку — 111,97 га, насадженнями зайнято понад 100 га території парку. У парку 
+            представлені п'ять типів садово-паркових ландшафтів: лісовий, парковий, лучний, 
+            садовий, регулярний. 90 % території насаджень відносяться до лісового та паркового 
+            типів. Усього в парку зростає 36 видів деревних рослин.</p>
+            <div class="slider">
+                <ul>
+                    <img src="images/ППС1.jpg" id='slider_img'>   
+                    <div class="control">
+                        <div id="c1"></div>
+                        <div id="c2"></div>
+                        <div id="c3"></div>
+                    </div>
+                </ul>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+            
+        
+                <script src='jquery-3.4.1.slim.js'></script>
+            
+                <script>
+                    
+                 
+                 
+                  $(document).ready(function(){
+                    let a=1;
+                    let img_counter=3;
+                    let counter=1;
+                    let img =document.getElementById('slider_img');
+            
+                    setInterval(function(){
+                        img.setAttribute('src', 'images/ППС'+counter+'.jpg');
+                        $(`.control div`).css('opacity', '0.4')
+                       $(`#c${counter}`).css('opacity', '1')
+            
+                                  counter++;
+            if (counter> img_counter){
+                counter=1;
+            }
+                    },6000);
+            
+             
+            $('#c1').click(function(){
+                img.setAttribute('src', 'images/ППС'+1+'.jpg');
+                $('#c1').css('opacity', '1');
+                $('#c2').css('opacity', '0.4');
+                $('#c3').css('opacity', '0.4');
+            });
+            $('#c2').click(function(){
+                img.setAttribute('src', 'images/ППС'+2+'.jpg');
+                $('#c2').css('opacity', '1');
+                $('#c1').css('opacity', '0.4');
+                $('#c3').css('opacity', '0.4');
+            });
+            $('#c3').click(function(){
+                img.setAttribute('src', 'images/ППС'+3+'.jpg');
+                $('#c3').css('opacity', '1');
+                $('#c1').css('opacity', '0.4');
+                $('#c2').css('opacity', '0.4');
+            });
+            $('.slider').hover(function(){
+                setInterval(function(){
+                       let img =document.getElementById('slider_img');
+                       $(`.control div`).css('opacity', '0.4')
+                       $(`#c${counter}`).css('opacity', '1')
+                        img.setAttribute('src', 'images/ППС'+counter+'.jpg');
+                                  counter++;
+            if (counter> img_counter){
+                counter=1;
+            }
+                    },1000000);
+            });
+            
+              
+                    });
+                </script>
+            </body>
+            </html>
+    
+            
