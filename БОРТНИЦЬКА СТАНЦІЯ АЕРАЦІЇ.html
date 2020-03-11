@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="example1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style type="text/css">
+body {
+    background: rgba(61, 41, 85, 0.6) url(images/станція.jpg) no-repeat center;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    backdrop-filter: blur(6px);
+}
+
+  </style>
+</head>
+<body>
+    <div id="background">
+        
+            <h1>БОРТНИЦЬКА СТАНЦІЯ АЕРАЦІЇ</h1>
+            <div id="container">
+        <div id="main-inf">
+        <p>Комплекс інженерних споруд, обладнання та комунікацій, призначений 
+                для повного біологічного очищення стічних вод Києва від забруднювальних речовин та обробки затриманих механічних решток (сміття). На станції проходять очищення всі господарсько-побутові стічні води, а також промислові стічні води після попереднього їх очищення на самих підприємствах. Станція складається з трьох блоків очищення стічних вод, трьох цехів обробки осадів стічних вод (ОСВ) і допоміжних цехів.
+</p>
+       <div class="slider">
+<ul>
+            <img src="images/станція1.jpg" id='slider_img'>   
+            <div  class="control">
+<div id="c1"></div>
+<div id="c2"></div>
+
+            </div>
+
+</ul>
+       </div>
+
+
+
+
+
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src='jquery-3.4.1.slim.js'></script>
+
+    <script>
+        
+     
+     
+      $(document).ready(function(){
+        let a=1;
+        let img_counter=2;
+        let counter=1;
+        let img =document.getElementById('slider_img');
+
+        setInterval(function(){
+            img.setAttribute('src', 'images/станція'+counter+'.jpg');
+
+
+                      counter++;
+if (counter> img_counter){
+    counter=1;
+}
+        },6000);
+
+ 
+$('#c1').click(function(){
+    img.setAttribute('src', 'images/станція'+1+'.jpg');
+
+});
+$('#c2').click(function(){
+    img.setAttribute('src', 'images/станція'+2+'.jpg');
+
+});
+$('.slider').hover(function(){
+    setInterval(function(){
+           let img =document.getElementById('slider_img');
+            img.setAttribute('src', 'images/станція'+counter+'.jpg');
+                      counter++;
+if (counter> img_counter){
+    counter=1;
+}
+        },1000000);
+});
+
+  
+        });
+    </script>
+</body>
+</html>
