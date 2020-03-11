@@ -33,7 +33,9 @@
             типів. Усього в парку зростає 36 видів деревних рослин.</p>
             <div class="slider">
                 <ul>
+                   <!-- <div id="img-div">-->
                     <img src="images/ППС1.jpg" id='slider_img'>   
+                    <!-- </div>-->
                     <div class="control">
                         <div id="c1"></div>
                         <div id="c2"></div>
@@ -58,9 +60,10 @@
                     let img_counter=3;
                     let counter=1;
                     let img =document.getElementById('slider_img');
-            
+                   
                     setInterval(function(){
                         img.setAttribute('src', 'images/ППС'+counter+'.jpg');
+                        
                         $(`.control div`).css('opacity', '0.4')
                        $(`#c${counter}`).css('opacity', '1')
             
@@ -82,12 +85,14 @@
                 $('#c2').css('opacity', '1');
                 $('#c1').css('opacity', '0.4');
                 $('#c3').css('opacity', '0.4');
+                
             });
             $('#c3').click(function(){
                 img.setAttribute('src', 'images/ППС'+3+'.jpg');
                 $('#c3').css('opacity', '1');
                 $('#c1').css('opacity', '0.4');
                 $('#c2').css('opacity', '0.4');
+               
             });
             $('.slider').hover(function(){
                 setInterval(function(){
